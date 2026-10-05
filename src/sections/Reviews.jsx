@@ -1,19 +1,22 @@
+import reviews from "../data/reviews";
 import Ratings from "./../assets/flaticons/rating stars.png";
-import C1 from "./../assets/images/clients/c1.png";
-import C2 from "./../assets/images/clients/c2.png";
-import C3 from "./../assets/images/clients/c3.png";
-import C4 from "./../assets/images/clients/c4.png";
 
 const Reviews = () => {
   return (
     <section className="reviews" id="review">
       <h2>clients reviews</h2>
       <p>What our client say about us</p>
-      <div className="client-reviews">
-        <Review c_image={C1} c_alt="Tom Leakar" c_address="London, UK" />
-        <Review c_image={C2} c_alt="Monirul Islam" c_address="London, UK" />
-        <Review c_image={C3} c_alt="Jackie Chan" c_address="London, UK" />
-        <Review c_image={C4} c_alt="Shohrab Hossain" c_address="London, UK" />
+      <div className="client-reviews-container">
+        <div className="client-reviews">
+          {reviews.map((review) => (
+            <Review
+              key={review.id}
+              c_image={review.c_image}
+              c_alt={review.c_alt}
+              c_address={review.c_address}
+            />
+          ))}
+        </div>
       </div>
       <Listings />
     </section>

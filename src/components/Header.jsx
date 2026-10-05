@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Search from "./../assets/flaticons/magnifying-glass.png";
 
 const FirstPart = () => {
@@ -24,7 +25,6 @@ const FirstPart = () => {
           </li>
         </ul>
         <ul className="other">
-          <li>+1 222 777 6565</li>
           <li>
             <a href="#">Sign In</a>
           </li>
@@ -37,31 +37,80 @@ const FirstPart = () => {
   );
 };
 const SecondPart = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsMobile(false);
+      } else {
+        setIsMobile(true);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="second-part">
       <p>
         List<span>Race</span>
       </p>
-      <ul>
-        <li>
-          <a href="#home">HOME</a>
-        </li>
-        <li>
-          <a href="#how-it-works">HOW IT WORKS</a>
-        </li>
-        <li>
-          <a href="#explore">EXPLORE</a>
-        </li>
-        <li>
-          <a href="#review">REVIEW</a>
-        </li>
-        <li>
-          <a href="#blog">BLOG</a>
-        </li>
-        <li>
-          <a href="#contact">CONTACT</a>
-        </li>
-      </ul>
+      {isMobile ? (
+        <div className="mobile-menu">
+          <div
+            className={`hamburger ${isMenuOpen ? "open" : undefined}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+          </div>
+          {isMenuOpen && (
+            <ul>
+              <li>
+                <a href="#home">HOME</a>
+              </li>
+              <li>
+                <a href="#how-it-works">HOW IT WORKS</a>
+              </li>
+              <li>
+                <a href="#explore">EXPLORE</a>
+              </li>
+              <li>
+                <a href="#review">REVIEW</a>
+              </li>
+              <li>
+                <a href="#blog">BLOG</a>
+              </li>
+              <li>
+                <a href="#contact">CONTACT</a>
+              </li>
+            </ul>
+          )}
+        </div>
+      ) : (
+        <ul>
+          <li>
+            <a href="#home">HOME</a>
+          </li>
+          <li>
+            <a href="#how-it-works">HOW IT WORKS</a>
+          </li>
+          <li>
+            <a href="#explore">EXPLORE</a>
+          </li>
+          <li>
+            <a href="#review">REVIEW</a>
+          </li>
+          <li>
+            <a href="#blog">BLOG</a>
+          </li>
+          <li>
+            <a href="#contact">CONTACT</a>
+          </li>
+        </ul>
+      )}
     </div>
   );
 };

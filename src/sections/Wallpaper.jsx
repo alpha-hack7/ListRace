@@ -1,11 +1,19 @@
 import Location from "./../assets/flaticons/gps.png";
 import List from "./../assets/flaticons/list-symbol-of-three-items-with-dots.png";
 import Search from "./../assets/flaticons/magnifying-glass.png";
-import HikingBag from "./../assets/flaticons/topics/backpack.png";
-import Car from "./../assets/flaticons/topics/car.png";
-import Pills from "./../assets/flaticons/topics/medicine.png";
-import Hotel from "./../assets/flaticons/topics/resort.png";
-import Restaurant from "./../assets/flaticons/topics/restaurant.png";
+import topics from "./../data/topics";
+const Topic = ({ image, title, listings }) => {
+  return (
+    <div className="topic">
+      <img src={image} alt={title} />
+      <p>
+        <b>{title}</b>
+      </p>
+      <p>{listings} listings</p>
+    </div>
+  );
+};
+
 const Wallpaper = () => {
   return (
     <section id="home" className="home">
@@ -50,41 +58,16 @@ const Wallpaper = () => {
             </button>
           </div>
         </div>
-        <div className="topics">
-          <div className="topic">
-            <img src={Restaurant} alt="Restaurant image" />
-            <p>
-              <b>Resturent</b>
-            </p>
-            <p>150 listings</p>
-          </div>
-          <div className="topic">
-            <img src={HikingBag} alt="Hiking bag image" />
-            <p>
-              <b>Destination</b>
-            </p>
-            <p>214 listings</p>
-          </div>
-          <div className="topic">
-            <img src={Hotel} alt="Hotel image" />
-            <p>
-              <b>Hotels</b>
-            </p>
-            <p>185 listings</p>
-          </div>
-          <div className="topic">
-            <img src={Pills} alt="Pills image" />
-            <p>
-              <b>Healthcare</b>
-            </p>
-            <p>200 listings</p>
-          </div>
-          <div className="topic">
-            <img src={Car} alt="Car image" />
-            <p>
-              <b>Automobile</b>
-            </p>
-            <p>120 listings</p>
+        <div className="all-topics-container">
+          <div className="topics">
+            {topics.map((topic) => (
+              <Topic
+                key={topic.id}
+                image={topic.image}
+                title={topic.title}
+                listings={topic.listings}
+              />
+            ))}
           </div>
         </div>
       </div>

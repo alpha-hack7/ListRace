@@ -33,11 +33,10 @@ const Footer = () => {
         </ul>
       </section>
       <section className="external-links">
-        <p>&copy;Copyright. Designed And Developed by Alpha</p>
         <ul>
-          <li>
+          <li style={{ display: "flex", alignItems: "center", gap: "5px" }}>
             <img src={Phone} alt="telephone image" />
-            +1 (222) 777 8888
+            +254 702 125 404
           </li>
           <li>
             <img src={Facebook} alt="facebook icon" />
@@ -52,6 +51,9 @@ const Footer = () => {
             <img src={Google} alt="google icon" />
           </li>
         </ul>
+        <small>
+          &copy;Copyright. Designed And Developed by Son of the King
+        </small>
       </section>
     </footer>
   );

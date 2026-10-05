@@ -1,13 +1,9 @@
-import B1 from "./../assets/images/explore/e1.jpg";
-import B2 from "./../assets/images/explore/e2.jpg";
-import B3 from "./../assets/images/explore/e3.jpg";
-import B4 from "./../assets/images/explore/e4.jpg";
-import B5 from "./../assets/images/explore/e5.jpg";
-import B6 from "./../assets/images/explore/e6.jpg";
+import explore_places from "./../data/explore_places";
 import C6 from "./../assets/images/explore/person.png";
 
 // general
 import Like from "./../assets/flaticons/heart.png";
+import GPS from "./../assets/flaticons/gps.png";
 import Location from "./../assets/flaticons/location.png";
 import Upload from "./../assets/flaticons/upload.png";
 const Explore = () => {
@@ -16,82 +12,26 @@ const Explore = () => {
       <h2>explore</h2>
       <p>Explore New place, food, culture around the world and many more</p>
       <div className="explore-places">
-        <Place
-          b_image={B1}
-          c_image={C6}
-          b_alt="Tommy Helfinger Bar"
-          rate="5.0"
-          rate_color="skyblue"
-          ratings="10 ratings"
-          form_amount_range="5$ - 300$"
-          nature="Restaurant"
-          status="Closed"
-          rate_status="Best Rated"
-        />
-        <Place
-          b_image={B2}
-          c_image={C6}
-          b_alt="Swim And Dine Resort"
-          rate="4.6"
-          rate_color="green"
-          ratings="8 ratings"
-          form_amount_range="50$ - 500$"
-          nature="Hotel"
-          status="Open"
-          rate_status="Featured"
-        />
-        <Place
-          b_image={B3}
-          c_image={C6}
-          b_alt="Europe Tour"
-          rate="5.0"
-          rate_color="orange"
-          ratings="15 ratings"
-          form_amount_range="5k$ - 10k$"
-          nature="Destination"
-          status="Closed"
-          rate_status="Best Rated"
-        />
-        <Place
-          b_image={B4}
-          c_image={C6}
-          b_alt="Bungalow with Swimming Pool"
-          rate="5.0"
-          rate_color="orangered"
-          ratings="10 ratings"
-          form_amount_range="10k$ - 15k$"
-          nature="Real Estate"
-          status="Closed"
-          rate_status="Most Viewed"
-        />
-        <Place
-          b_image={B5}
-          c_image={C6}
-          b_alt="Vintage Car Expo"
-          rate="4.2"
-          rate_color="green"
-          ratings="8 ratings"
-          form_amount_range="500$ - 1200$"
-          nature="Automotion"
-          status="Open"
-          rate_status="Featured"
-        />
-        <Place
-          b_alt="Thailand Tour"
-          b_image={B6}
-          c_image={C6}
-          rate="5.0"
-          rate_color="orangered"
-          rate_status="Best Rated"
-          ratings="15 ratings"
-          form_amount_range="5k$ - 10k$"
-          nature="Destination"
-          status="Closed"
-        />
+        {explore_places.map((place) => (
+          <Place
+            key={place.id}
+            b_image={place.b_image}
+            c_image={C6}
+            b_alt={place.b_alt}
+            rate={place.rate}
+            rate_color={place.rate_color}
+            ratings={place.ratings}
+            form_amount_range={place.form_amount_range}
+            nature={place.nature}
+            status={place.status}
+            rate_status={place.rate_status}
+          />
+        ))}
       </div>
     </section>
   );
 };
+
 const Place = ({
   b_image,
   c_image,
@@ -139,8 +79,8 @@ const Place = ({
         <div className="pops">
           <p>{rate_status}</p>
           <div>
-            <img src="./../assets/flaticons/heart.png" alt="cross thingy" />
-            <img src="./../assets/flaticons/gps.png" alt="bookmark" />
+            <img src={Like} alt="cross thingy" />
+            <img src={GPS} alt="bookmark" />
           </div>
         </div>
       </div>
