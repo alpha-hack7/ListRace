@@ -1,6 +1,6 @@
-import B1 from "./../assets/images/blog/b1.jpg";
-import B2 from "./../assets/images/blog/b2.jpg";
-import B3 from "./../assets/images/blog/b3.jpg";
+import B1 from "./../assets/images/blog/b1.avif";
+import B2 from "./../assets/images/blog/b2.avif";
+import B3 from "./../assets/images/blog/b3.avif";
 
 const Blogs = () => {
   return (
@@ -29,7 +29,7 @@ const Blogs = () => {
 const Blog = ({ image, heading, date }) => {
   return (
     <div className="blog-article">
-      <img src={image} alt="image 1" />
+      <img src={image} alt="image 1" width="100%" height="auto" />
       <div className="blog-details">
         <p>
           <a href="#">{heading}</a>

@@ -21,17 +21,17 @@ const Wallpaper = () => {
         <div className="wallpaper-content">
           <h2>
             best place to find and explore <br />
-            that all you need
+            all that you need
           </h2>
           <p>
-            Find Best Place, Restaurant, Hotel, Real State and many more think
-            in just One click
+            Find Best Place, Restaurant, Hotel, Real Estate and many more in
+            just One click
           </p>
           <div className="form-area">
             <form className="home-form" action="">
               <div className="inputs">
                 <div className="category">
-                  <label for="category">What?</label>
+                  <label htmlFor="category">What?</label>
                   <input
                     type="text"
                     name="category"
@@ -41,7 +41,7 @@ const Wallpaper = () => {
                   <img src={List} alt="list with three dots" />
                 </div>
                 <div className="location">
-                  <label for="location">Location</label>
+                  <label htmlFor="location">Location</label>
                   <input
                     type="text"
                     name="location"

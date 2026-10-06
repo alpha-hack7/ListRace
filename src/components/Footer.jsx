@@ -3,7 +3,27 @@ import Facebook from "./../assets/flaticons/facebook-logo-24.png";
 import Google from "./../assets/flaticons/google-plus-logo-24.png";
 import Phone from "./../assets/flaticons/phone-solid-24.png";
 import Twitter from "./../assets/flaticons/twitter-logo-24.png";
-
+const Social_Link = ({ image, alt }) => {
+  return (
+    <li>
+      <img src={image} alt={alt} width="20px" height="20px" />
+    </li>
+  );
+};
+const ExternalLinks = () => {
+  return (
+    <ul>
+      <li>
+        <img src={Phone} alt="telephone image" width="20px" height="20px" />
+        +254 702 125 404
+      </li>
+      <Social_Link image={LinkedIn} alt="linked in icon" />
+      <Social_Link image={Facebook} alt="facebook icon" />
+      <Social_Link image={Twitter} alt="twitter icon" />
+      <Social_Link image={Google} alt="google icon" />
+    </ul>
+  );
+};
 const Footer = () => {
   return (
     <footer className="footer">
@@ -33,24 +53,7 @@ const Footer = () => {
         </ul>
       </section>
       <section className="external-links">
-        <ul>
-          <li style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-            <img src={Phone} alt="telephone image" />
-            +254 702 125 404
-          </li>
-          <li>
-            <img src={Facebook} alt="facebook icon" />
-          </li>
-          <li>
-            <img src={Twitter} alt="twitter icon" />
-          </li>
-          <li>
-            <img src={LinkedIn} alt="linked in icon" />
-          </li>
-          <li>
-            <img src={Google} alt="google icon" />
-          </li>
-        </ul>
+        <ExternalLinks />
         <small>
           &copy;Copyright. Designed And Developed by Son of the King
         </small>

@@ -1,12 +1,13 @@
-import B1 from "./../assets/images/explore/e1.jpg";
-import B2 from "./../assets/images/explore/e2.jpg";
-import B3 from "./../assets/images/explore/e3.jpg";
-import B4 from "./../assets/images/explore/e4.jpg";
-import B5 from "./../assets/images/explore/e5.jpg";
-import B6 from "./../assets/images/explore/e6.jpg";
+import B1 from "./../assets/images/explore/e1.avif";
+import B2 from "./../assets/images/explore/e2.avif";
+import B3 from "./../assets/images/explore/e3.avif";
+import B4 from "./../assets/images/explore/e4.avif";
+import B5 from "./../assets/images/explore/e5.avif";
+import B6 from "./../assets/images/explore/e6.avif";
 
 const explore_places = [
   {
+    id: 1,
     b_image: B1,
     b_alt: "Tommy Helfinger Bar",
     rate: "5.0",
@@ -18,6 +19,7 @@ const explore_places = [
     rate_status: "Best Rated",
   },
   {
+    id: 2,
     b_image: B2,
     b_alt: "Swim And Dine Resort",
     rate: "4.6",
@@ -29,6 +31,7 @@ const explore_places = [
     rate_status: "Popular",
   },
   {
+    id: 3,
     b_image: B3,
     b_alt: "Europe Tour",
     rate: "5.0",
@@ -40,6 +43,7 @@ const explore_places = [
     rate_status: "Best Rated",
   },
   {
+    id: 4,
     b_image: B4,
     b_alt: "Bungalow with Swimming Pool",
     rate: "5.0",
@@ -51,6 +55,7 @@ const explore_places = [
     rate_status: "Popular",
   },
   {
+    id: 5,
     b_image: B5,
     b_alt: "Luxury Car",
     rate: "4.8",
@@ -62,6 +67,7 @@ const explore_places = [
     rate_status: "Popular",
   },
   {
+    id: 6,
     b_image: B6,
     b_alt: "Spa and Wellness Center",
     rate: "4.9",

@@ -6,7 +6,7 @@ const Contact = () => {
         Listrace offer you to list your business with us and we very much able
         to promote your Business
       </p>
-      <form action="">
+      <form>
         <input
           type="email"
           name="email"

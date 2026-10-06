@@ -5,7 +5,7 @@ import Binoculars from "./../assets/flaticons/vision.png";
 const HowItWorks = () => {
   return (
     <section className="how-it-works" id="how-it-works">
-      <h2>how it works</h2>
+      <h2>HOW IT WORKS</h2>
       <p>Learn More about how our website works</p>
       <div className="choice">
         <div>

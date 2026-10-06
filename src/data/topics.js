@@ -1,8 +1,8 @@
-import HikingBag from "./../assets/flaticons/topics/backpack.png";
-import Car from "./../assets/flaticons/topics/car.png";
-import Pills from "./../assets/flaticons/topics/medicine.png";
-import Hotel from "./../assets/flaticons/topics/resort.png";
-import Restaurant from "./../assets/flaticons/topics/restaurant.png";
+import HikingBag from "./../assets/flaticons/topics/backpack.avif";
+import Car from "./../assets/flaticons/topics/car.avif";
+import Pills from "./../assets/flaticons/topics/medicine.avif";
+import Hotel from "./../assets/flaticons/topics/resort.avif";
+import Restaurant from "./../assets/flaticons/topics/restaurant.avif";
 
 const topics = [
   {
